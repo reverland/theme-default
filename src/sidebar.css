@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import "./common/var.css";
+
+@component-namespace el {
+  @b sidebar {
+    position: absolute;
+    width: var(--sidebar-width);
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    overflow: hidden;
+    background-color: var(--sidebar-background-color);
+
+    @e logo{
+      height: var(--sidebar-logo-height);
+      width: 100%;
+      position: relative;
+
+      & img {
+        /* 图片自动缩放，水平垂直居中*/
+        max-width: calc(var(--sidebar-width) - 50px);
+        max-height: calc(var(--sidebar-logo-height) - 30px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @e menu {
+    }
+  }
+}
